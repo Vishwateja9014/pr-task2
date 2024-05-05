@@ -1,0 +1,29 @@
+# Drop rows with missing values
+employee_data.dropna(inplace=True)
+
+# Summary statistics
+print(employee_data.describe())
+
+# Visualize the distribution of 'Age'
+sns.histplot(employee_data['Age'], kde=True)
+plt.title('Age Distribution')
+plt.show()
+
+# Visualize the salary distribution
+sns.histplot(employee_data['Salary'], kde=True)
+plt.title('Salary Distribution')
+plt.show()
+
+# Visualize the number of employees in each department
+sns.countplot(x='Department', data=employee_data)
+plt.title('Employee Count by Department')
+plt.show()
+
+# Visualize the gender distribution
+sns.countplot(x='Gender', data=employee_data)
+plt.title('Gender Distribution')
+plt.show()
+
+# Correlation matrix
+correlation_matrix = employee_data.corr()
+print(correlation_matrix)
